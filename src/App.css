@@ -1,0 +1,18 @@
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.list {
+  border: 1px solid black;
+  margin-top: 1px;
+}
+.list-item {
+  display: flex;
+  position: relative;
+}
+.list-item__state {
+  position: absolute;
+  right: 0;
+  bottom: 0.5px;
+}
