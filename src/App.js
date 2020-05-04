@@ -47,7 +47,7 @@ class App extends React.Component {
             New
           </button>
         </div>
-        <h2>Todo</h2>
+        <h2>Todo!</h2>
         <div className="list">
           {todos.map((todo) => (
             <Todo todo={todo} deleteTodo={this.deleteTodo} />
