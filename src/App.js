@@ -17,7 +17,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const todoData = window.localStorage.getItem("todoapp");
+    const todoData = document.cookie;
     if (todoData) {
       const oldTodos = JSON.parse(todoData);
       this.setState({
@@ -26,9 +26,9 @@ class App extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevState) {
     if (prevState.todos !== this.state.todos) {
-      window.localStorage.setItem("todoapp", JSON.stringify(this.state.todos));
+      document.cookie = JSON.stringify(this.state.todos);
     }
   }
 
