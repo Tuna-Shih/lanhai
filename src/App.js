@@ -16,6 +16,22 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    const todoData = window.localStorage.getItem("todoapp");
+    if (todoData) {
+      const oldTodos = JSON.parse(todoData);
+      this.setState({
+        todos: oldTodos,
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.todos !== this.state.todos) {
+      window.localStorage.setItem("todoapp", JSON.stringify(this.state.todos));
+    }
+  }
+
   addTodo() {
     const { todos, todoText } = this.state;
     this.setState({
@@ -42,7 +58,12 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <div className="add">
-          <input type="text" value={todoText} onChange={this.handleChange} />
+          <input
+            type="text"
+            value={todoText}
+            onChange={this.handleChange}
+            placeholder="Add Something"
+          />
           <button className="add-todo" onClick={this.addTodo}>
             New
           </button>
