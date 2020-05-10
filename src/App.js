@@ -16,6 +16,21 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount() {
+    const todoData = document.cookie;
+    if (todoData) {
+      const oldTodos = JSON.parse(todoData);
+      this.setState({
+        todos: oldTodos,
+      });
+    }
+  }
+
+  componentDidUpdate(prevState) {
+    if (prevState.todos !== this.state.todos) {
+      document.cookie = JSON.stringify(this.state.todos);
+    }
+  }
   addTodo() {
     const { todos, todoText } = this.state;
     this.setState({
