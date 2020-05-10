@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import TodoItem from "./TodoItem";
 import Todo from "./Todo";
 
 class App extends React.Component {
@@ -31,6 +32,7 @@ class App extends React.Component {
       document.cookie = JSON.stringify(this.state.todos);
     }
   }
+
   addTodo() {
     const { todos, todoText } = this.state;
     this.setState({
@@ -57,15 +59,11 @@ class App extends React.Component {
     return (
       <div className="wrapper">
         <div className="add">
-          <input
-            type="text"
-            value={todoText}
-            onChange={this.handleChange}
-            placeholder="Add Something"
+          <TodoItem
+            todoText={todoText}
+            addTodo={this.addTodo}
+            handleChange={this.handleChange}
           />
-          <button className="add-todo" onClick={this.addTodo}>
-            New
-          </button>
         </div>
         <h2>Todo!</h2>
         <div className="list">
