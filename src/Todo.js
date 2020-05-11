@@ -6,7 +6,7 @@ class Todo extends React.Component {
     this.delete = this.delete.bind(this);
   }
 
-  delete(id) {
+  delete() {
     const { todo, deleteTodo } = this.props;
     deleteTodo(todo.id);
   }

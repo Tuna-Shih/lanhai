@@ -35,11 +35,13 @@ class App extends React.Component {
 
   addTodo() {
     const { todos, todoText } = this.state;
-    this.setState({
-      todos: [...todos, { id: this.id, text: todoText }],
-      todoText: "",
-    });
-    this.id++;
+    if (todoText.replace(/\s*/g, "") !== "") {
+      this.setState({
+        todos: [...todos, { id: this.id, text: todoText }],
+        todoText: "",
+      });
+      this.id++;
+    }
   }
 
   deleteTodo(id) {
@@ -68,7 +70,7 @@ class App extends React.Component {
         <h2>Todo!</h2>
         <div className="list">
           {todos.map((todo) => (
-            <Todo todo={todo} deleteTodo={this.deleteTodo} />
+            <Todo key={todo.id} todo={todo} deleteTodo={this.deleteTodo} />
           ))}
         </div>
       </div>
