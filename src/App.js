@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    const todoData = document.cookie;
+    const todoData = window.localStorage.getItem("todoapp");
     if (todoData) {
       const oldTodos = JSON.parse(todoData);
       this.setState({
@@ -27,12 +27,11 @@ class App extends React.Component {
     }
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.todos !== this.state.todos) {
-      document.cookie = JSON.stringify(this.state.todos);
+      window.localStorage.setItem("todoapp", JSON.stringify(this.state.todos));
     }
   }
-
   addTodo() {
     const { todos, todoText } = this.state;
     if (todoText.replace(/\s*/g, "") !== "") {
