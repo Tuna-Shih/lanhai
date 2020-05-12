@@ -5,18 +5,11 @@ import Todo from "./Todo";
 import cookies from "js-cookie";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: [],
-      todoText: "",
-    };
-    this.id = 1;
-
-    this.addTodo = this.addTodo.bind(this);
-    this.deleteTodo = this.deleteTodo.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
+  state = {
+    todos: [],
+    todoText: "",
+  };
+  id = 1;
 
   componentDidMount() {
     const todoData = cookies.get("todoapp");
@@ -33,7 +26,7 @@ class App extends React.Component {
       cookies.set("todoapp", JSON.stringify(this.state.todos));
     }
   }
-  addTodo() {
+  addTodo = () => {
     const { todos, todoText } = this.state;
     if (todoText.replace(/\s*/g, "") !== "") {
       this.setState({
@@ -42,19 +35,19 @@ class App extends React.Component {
       });
       this.id++;
     }
-  }
+  };
 
-  deleteTodo(id) {
+  deleteTodo = (id) => {
     this.setState({
       todos: this.state.todos.filter((todo) => todo.id !== id),
     });
-  }
+  };
 
-  handleChange(e) {
+  handleChange = (e) => {
     this.setState({
       todoText: e.target.value,
     });
-  }
+  };
 
   render() {
     const { todos, todoText } = this.state;
