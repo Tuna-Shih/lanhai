@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import TodoItem from "./TodoItem";
 import Todo from "./Todo";
@@ -9,7 +10,6 @@ class App extends React.Component {
     todos: [],
     todoText: "",
   };
-  id = 1;
 
   componentDidMount() {
     const todoData = cookies.get("todoapp");
@@ -30,10 +30,9 @@ class App extends React.Component {
     const { todos, todoText } = this.state;
     if (todoText.replace(/\s*/g, "") !== "") {
       this.setState({
-        todos: [...todos, { id: this.id, text: todoText }],
+        todos: [...todos, { id: uuidv4(), text: todoText }],
         todoText: "",
       });
-      this.id++;
     }
   };
 
