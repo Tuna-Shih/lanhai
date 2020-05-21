@@ -100,7 +100,6 @@ class App extends React.Component {
 
     return (
       <div className="wrapper">
-        <button onClick={this.loadMore}>XD</button>
         <div className="add">
           <TodoItem
             todoText={todoText}
