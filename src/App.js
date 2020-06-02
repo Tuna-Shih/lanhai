@@ -1,91 +1,139 @@
 import React from 'react';
 import { Layout, Menu, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
-import './App.css';
+import './App.less';
 import FormList from './formList.js';
 
 const { Header, Content, Footer } = Layout;
-function App() {
+const someImages = [
+  {
+    leftImages: [require('./leftImages/1.jpg')],
+    rightImages: [require('./rightImages/1.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/2.jpg'), require('./leftImages/3.jpg')],
+    rightImages: [
+      require('./rightImages/2.jpg'),
+      require('./rightImages/3.jpg')
+    ],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/4.jpg')],
+    rightImages: [require('./rightImages/4.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/5.jpg'), require('./leftImages/6.jpg')],
+    rightImages: [
+      require('./rightImages/5.jpg'),
+      require('./rightImages/6.jpg')
+    ],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/7.jpg')],
+    rightImages: [require('./rightImages/7.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/8.jpg')],
+    rightImages: [require('./rightImages/8.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/9.jpg')],
+    rightImages: [require('./rightImages/9.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [
+      require('./leftImages/10.jpg'),
+      require('./leftImages/11.jpg')
+    ],
+    rightImages: [
+      require('./rightImages/10.jpg'),
+      require('./rightImages/11.jpg')
+    ],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/12.jpg')],
+    rightImages: [require('./rightImages/12.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/13.jpg')],
+    rightImages: [require('./rightImages/13.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/14.jpg')],
+    rightImages: [require('./rightImages/14.jpg')],
+    text: 'test'
+  },
+  {
+    leftImages: [require('./leftImages/15.jpg')],
+    rightImages: [require('./rightImages/15.jpg')],
+    text: 'test'
+  }
+];
+
+const App = () => {
   return (
-    <Layout>
-      <Content
-        className="site-layout"
-        style={{
-          padding: '0 50px',
-          backgroundColor: 'black',
-          opacity: '100%'
-        }}>
-        <Header
-          style={{
-            position: 'fixed',
-            zIndex: 1,
-            width: '100%',
-            backgroundColor: 'black',
-            opacity: '90%'
-          }}>
+    <Layout className="wrapper-app">
+      <Content className="site-layout">
+        <Header className="header">
           <Menu
+            className="menu"
             selectable={false}
             theme="dark"
-            mode="horizontal"
-            style={{ backgroundColor: 'black' }}>
+            mode="horizontal">
             <Menu.Item key="1">Home</Menu.Item>
             <Menu.Item key="2">來電洽詢</Menu.Item>
             <Menu.Item key="3">立即預約</Menu.Item>
           </Menu>
         </Header>
-        <div
-          className="site-layout-background"
-          style={{ padding: 24, marginTop: 40, minHeight: 1000 }}>
+        <div className="image">
           <div>
             <img
-              style={{ width: '100%' }}
-              src={require('./leftImages/title.jpg')}
+              className="background-image"
+              src={require('./leftImages/0.jpg')}
               alt=""
             />
           </div>
-
-          <Row>
-            <Col span={16} style={{ position: 'relative' }}>
-              <img
-                src={require('./leftImages/1.jpg')}
-                alt=""
-                style={{ width: '100%' }}
-              />
-            </Col>
-
-            <Col span={8} style={{ position: 'relative' }}>
-              <img
-                src={require('./rightImages/1.jpg')}
-                alt=""
-                style={{
-                  width: '100%',
-                  position: 'absolute',
-                  height: '100%',
-                  top: 0
-                }}
-              />
-              <h1 style={{ position: 'relative', textAlign: 'center' }}>
-                國際生活排場
-              </h1>
-              <h2 style={{ position: 'relative', textAlign: 'center' }}>
-                新北第一國際城
-              </h2>
-              <h2 style={{ position: 'relative', textAlign: 'center' }}>
-                林口與世界無縫接軌
-              </h2>
-              <h3 style={{ position: 'relative', textAlign: 'center' }}>
-                機捷X中山高最強交通！高科技聚落迅速發展，願景無限！
-              </h3>
-            </Col>
-          </Row>
+          {someImages.map(({ leftImages, rightImages }, index) => (
+            <div key={index}>
+              <Row>
+                <Col span={16} className="left">
+                  {leftImages.map(image => (
+                    <img className="left-image" src={image} alt="" />
+                  ))}
+                </Col>
+                <Col span={8} className="right">
+                  {rightImages.map(image => (
+                    <img
+                      className={
+                        rightImages.length === 2
+                          ? 'right-image-2'
+                          : 'right-image-1'
+                      }
+                      src={image}
+                      alt=""
+                    />
+                  ))}
+                  <h1 className="right-text">1</h1>
+                </Col>
+              </Row>
+            </div>
+          ))}
         </div>
+        <FormList />
+        <Footer className="footer">Ant Design ©2018 Created by Ant UED</Footer>
       </Content>
-      <FormList />
-      <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2018 Created by Ant UED
-      </Footer>
     </Layout>
   );
-}
+};
 
 export default App;
