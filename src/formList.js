@@ -21,14 +21,17 @@ const FormList = () => {
 
   return (
     <div className="wrapper-formList">
-      <h1 className="title">預約賞屋</h1>
+      <h1 className="title" id={2}>
+        預約賞屋
+      </h1>
       <Row>
-        <Col span={12}>
+        <Col sm={12} xs={24}>
           <iframe
             title="map"
             style={{
-              width: '90%',
-              height: '90%',
+              padding: '10px',
+              width: '100%',
+              height: '100%',
               frameborder: '0',
               border: 0,
               allowfullscreen: '',
@@ -37,7 +40,7 @@ const FormList = () => {
             }}
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.548688654004!2d121.37482481478986!3d25.083281342468535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a6c282015199%3A0x9ae6d1cab8465f7f!2zMjQ05paw5YyX5biC5p6X5Y-j5Y2A5paH5YyW5LiJ6Lev5LqM5q61Mjk46Jmf!5e0!3m2!1szh-TW!2stw!4v1584327810050!5m2!1szh-TW!2stw"></iframe>
         </Col>
-        <Col span={12}>
+        <Col sm={12} xs={24}>
           <Form
             {...layout}
             form={form}
@@ -71,7 +74,7 @@ const FormList = () => {
                   required: true
                 }
               ]}>
-              <Select defaultValue="全日" allowClear>
+              <Select allowClear>
                 <Option value="全日">全日</Option>
                 <Option value="上午">上午</Option>
                 <Option value="中午">中午</Option>
