@@ -9,9 +9,6 @@ import VisibilitySensor from 'react-visibility-sensor';
 const { Header, Content, Footer } = Layout;
 const { Link } = Anchor;
 
-const onChange = isVisible => {
-  console.log('Element is now %s', isVisible ? 'visible' : 'hidden');
-};
 const someImages = [
   {
     id: uuidv4(),
@@ -393,46 +390,52 @@ const App = () => {
                         )
                       )}
                     </div>
-                    <VisibilitySensor onChange={onChange}>
-                      <div className="text">
-                        <p className="XD">
-                          {title.map(element => (
-                            <span key={element.id} className="right-title">
-                              {element.text}
-                              <br />
-                            </span>
-                          ))}
-                        </p>
-                        <p>
-                          {subTitle.map(element => (
-                            <span key={element.id} className="right-subTitle">
-                              {element.text}
-                              <br />
-                            </span>
-                          ))}
-                        </p>
-                        <p>
-                          {article.map(element =>
-                            element.text instanceof Array ? (
-                              <span key={element.id} className="right-article">
-                                {element.text.map(e => (
-                                  <span
-                                    key={e.id}
-                                    className="right-article-color">
-                                    {e.txt}
-                                  </span>
-                                ))}
-                                <br />
-                              </span>
-                            ) : (
-                              <span key={element.id} className="right-article">
+                    <VisibilitySensor partialVisibility={true}>
+                      {({ isVisible }) => (
+                        <div className={isVisible ? 'text' : 'text-none'}>
+                          <p>
+                            {title.map(element => (
+                              <span key={element.id} className="right-title">
                                 {element.text}
                                 <br />
                               </span>
-                            )
-                          )}
-                        </p>
-                      </div>
+                            ))}
+                          </p>
+                          <p>
+                            {subTitle.map(element => (
+                              <span key={element.id} className="right-subTitle">
+                                {element.text}
+                                <br />
+                              </span>
+                            ))}
+                          </p>
+                          <p>
+                            {article.map(element =>
+                              element.text instanceof Array ? (
+                                <span
+                                  key={element.id}
+                                  className="right-article">
+                                  {element.text.map(e => (
+                                    <span
+                                      key={e.id}
+                                      className="right-article-color">
+                                      {e.txt}
+                                    </span>
+                                  ))}
+                                  <br />
+                                </span>
+                              ) : (
+                                <span
+                                  key={element.id}
+                                  className="right-article">
+                                  {element.text}
+                                  <br />
+                                </span>
+                              )
+                            )}
+                          </p>
+                        </div>
+                      )}
                     </VisibilitySensor>
                   </Col>
                 </Row>

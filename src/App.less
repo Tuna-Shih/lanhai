@@ -81,7 +81,8 @@
           }
         }
 
-        .text {
+        .text-none {
+          opacity: 0%;
           position: relative;
           margin: 0px 10px 0px 10px;
           height: 100%;
@@ -90,12 +91,6 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
-
-          -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
-          -moz-animation: fadein 5s; /* Firefox < 16 */
-          -ms-animation: fadein 5s; /* Internet Explorer */
-          -o-animation: fadein 5s; /* Opera < 12.1 */
-          animation: fadein 5s;
 
           .right-title {
             color: #1a2f63;
@@ -127,6 +122,66 @@
             }
           }
         }
+
+        .text {
+          position: relative;
+          margin: 0px 10px 0px 10px;
+          height: 100%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .right-title {
+            -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 1s; /* Firefox < 16 */
+            -ms-animation: fadein 1s; /* Internet Explorer */
+            -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+
+            position: relative;
+            color: #1a2f63;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 3px;
+
+            &:nth-last-child(2) {
+              border-bottom: 2px solid;
+              padding-bottom: 5px;
+            }
+          }
+
+          .right-subTitle {
+            -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 3s; /* Firefox < 16 */
+            -ms-animation: fadein 3s; /* Internet Explorer */
+            -o-animation: fadein 3s; /* Opera < 12.1 */
+            animation: fadein 3s;
+
+            position: relative;
+            color: #67bfbf;
+            font-size: 25px;
+            font-weight: bold;
+          }
+
+          .right-article {
+            -webkit-animation: fadein 4s; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 4s; /* Firefox < 16 */
+            -ms-animation: fadein 4s; /* Internet Explorer */
+            -o-animation: fadein 4s; /* Opera < 12.1 */
+            animation: fadein 4s;
+
+            position: relative;
+            color: black;
+            font-size: 16px;
+
+            .right-article-color:first-child {
+              color: #67bfbf;
+              font-weight: bold;
+            }
+          }
+        }
       }
 
       :nth-child(2) {
@@ -143,34 +198,28 @@
       }
 
       :nth-child(9) {
-        .center {
-          :nth-child(3) {
-            :nth-child(odd) {
-              font-weight: bold;
-              font-size: 18px;
-            }
+        :nth-child(3) {
+          :nth-child(odd) {
+            font-weight: bold;
+            font-size: 18px;
           }
         }
       }
 
       :nth-child(10) {
-        .center {
-          :nth-child(3) {
-            :nth-child(n + 3) {
-              font-weight: bold;
-              font-size: 20px;
-            }
+        :nth-child(3) {
+          :nth-child(n + 3) {
+            font-weight: bold;
+            font-size: 20px;
           }
         }
       }
 
       :nth-child(11) {
-        .center {
-          :nth-child(3) {
-            :nth-child(n + 4) {
-              font-weight: bold;
-              font-size: 20px;
-            }
+        :nth-child(3) {
+          :nth-child(n + 4) {
+            font-weight: bold;
+            font-size: 20px;
           }
         }
       }
@@ -215,7 +264,7 @@
 @keyframes fadein {
   from {
     opacity: 0;
-    top: 20%;
+    top: 50%;
   }
   to {
     opacity: 1;
@@ -227,7 +276,7 @@
 @-moz-keyframes fadein {
   from {
     opacity: 0;
-    top: 20%;
+    top: 50%;
   }
   to {
     opacity: 1;
@@ -239,7 +288,7 @@
 @-webkit-keyframes fadein {
   from {
     opacity: 0;
-    top: 20%;
+    top: 50%;
   }
   to {
     opacity: 1;
@@ -251,7 +300,7 @@
 @-ms-keyframes fadein {
   from {
     opacity: 0;
-    top: 20%;
+    top: 50%;
   }
   to {
     opacity: 1;
@@ -263,7 +312,7 @@
 @-o-keyframes fadein {
   from {
     opacity: 0;
-    top: 20%;
+    top: 50%;
   }
   to {
     opacity: 1;
