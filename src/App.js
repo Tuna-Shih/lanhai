@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout, Menu, Row, Col, Anchor } from 'antd';
+import { Layout, Row, Col, Anchor } from 'antd';
 import 'antd/dist/antd.css';
 import './App.less';
 import FormList from './formList.js';
@@ -14,7 +14,11 @@ const someImages = [
     id: uuidv4(),
     leftImages: [require('./leftImages/1.jpg')],
     rightImages: [require('./rightImages/1.jpg')],
-    title: ['國際生活排場', '✦'].map(text => ({
+    title: ['國際生活排場'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -40,6 +44,10 @@ const someImages = [
       id: uuidv4(),
       text
     })),
+    square: [].map(text => ({
+      id: uuidv4(),
+      text
+    })),
     subTitle: ['媒體三大巨擘齊聚', '300億資金重磅進駐'].map(text => ({
       id: uuidv4(),
       text
@@ -62,7 +70,11 @@ const someImages = [
     id: uuidv4(),
     leftImages: [require('./leftImages/4.jpg')],
     rightImages: [require('./rightImages/4.jpg')],
-    title: ['高速交通網', '✦'].map(text => ({
+    title: ['高速交通網'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -88,7 +100,11 @@ const someImages = [
       require('./rightImages/5.jpg'),
       require('./rightImages/6.jpg')
     ],
-    title: ['國際購物城', '✦'].map(text => ({
+    title: ['國際購物城'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -110,7 +126,11 @@ const someImages = [
     id: uuidv4(),
     leftImages: [require('./leftImages/7.jpg')],
     rightImages: [require('./rightImages/7.jpg')],
-    title: ['林口運動中心', '✦'].map(text => ({
+    title: ['林口運動中心'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -131,7 +151,11 @@ const someImages = [
     id: uuidv4(),
     leftImages: [require('./leftImages/8.jpg')],
     rightImages: [require('./rightImages/8.jpg')],
-    title: ['看山看海 繁華享清境', '✦'].map(text => ({
+    title: ['看山看海 繁華享清境'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -154,7 +178,11 @@ const someImages = [
     id: uuidv4(),
     leftImages: [require('./leftImages/9.jpg')],
     rightImages: [require('./rightImages/9.jpg')],
-    title: ['無限棟距', '✦'].map(text => ({
+    title: ['無限棟距'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -181,7 +209,11 @@ const someImages = [
       require('./rightImages/10.jpg'),
       require('./rightImages/11.jpg')
     ],
-    title: ['三發地產真工藝', '大師陣容傾心打造', '✦'].map(text => ({
+    title: ['三發地產真工藝', '大師陣容傾心打造'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -218,6 +250,10 @@ const someImages = [
       id: uuidv4(),
       text
     })),
+    square: [].map(text => ({
+      id: uuidv4(),
+      text
+    })),
     subTitle: ['建築設計', 'MAG玫格・ 張家豪建築師'].map(text => ({
       id: uuidv4(),
       text
@@ -251,6 +287,10 @@ const someImages = [
       id: uuidv4(),
       text
     })),
+    square: [].map(text => ({
+      id: uuidv4(),
+      text
+    })),
     subTitle: ['景觀設計', 'GARDEN 老圃景觀設計'].map(text => ({
       id: uuidv4(),
       text
@@ -281,7 +321,11 @@ const someImages = [
     id: uuidv4(),
     leftImages: [require('./leftImages/14.jpg')],
     rightImages: [require('./rightImages/14.jpg')],
-    title: ['15大項飯店級公設', '✦'].map(text => ({
+    title: ['15大項飯店級公設'].map(text => ({
+      id: uuidv4(),
+      text
+    })),
+    square: ['♦'].map(text => ({
       id: uuidv4(),
       text
     })),
@@ -308,6 +352,10 @@ const someImages = [
       id: uuidv4(),
       text
     })),
+    square: [].map(text => ({
+      id: uuidv4(),
+      text
+    })),
     subTitle: ['完美高坪效格局，買一房多賺一房'].map(text => ({
       id: uuidv4(),
       text
@@ -327,21 +375,11 @@ const someImages = [
 const App = () => {
   return (
     <Layout className="wrapper-app">
-      <Content className="site-layout" id={1}>
+      <Content className="site-layout" id="content">
         <Header className="header">
           <Anchor>
-            <Menu
-              className="menu"
-              selectable={false}
-              theme="dark"
-              mode="horizontal">
-              <Menu.Item key="1">
-                {<Link href="#1" title="Home"></Link>}
-              </Menu.Item>
-              <Menu.Item key="2">
-                {<Link href="#2" title="立即預約"></Link>}
-              </Menu.Item>
-            </Menu>
+            <Link href="#content" title="嵐海"></Link>
+            <Link href="#reservation" title="立即預約"></Link>
           </Anchor>
         </Header>
         <div className="image">
@@ -353,7 +391,15 @@ const App = () => {
             />
           </div>
           {someImages.map(
-            ({ id, leftImages, rightImages, title, subTitle, article }) => (
+            ({
+              id,
+              leftImages,
+              rightImages,
+              title,
+              square,
+              subTitle,
+              article
+            }) => (
               <div key={id}>
                 <Row>
                   <Col sm={16} xs={24} className="left">
@@ -402,6 +448,14 @@ const App = () => {
                             ))}
                           </p>
                           <p>
+                            {square.map(element => (
+                              <span key={element.id} className="square">
+                                {element.text}
+                                <br />
+                              </span>
+                            ))}
+                          </p>
+                          <p>
                             {subTitle.map(element => (
                               <span key={element.id} className="right-subTitle">
                                 {element.text}
@@ -444,7 +498,12 @@ const App = () => {
           )}
         </div>
         <FormList />
-        <Footer className="footer">Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer className="footer">
+          <a href="http://www.judges.com.tw/" className="URL">
+            士師地產行銷股份有限公司
+          </a>
+          維護製作
+        </Footer>
       </Content>
     </Layout>
   );

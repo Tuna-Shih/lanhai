@@ -1,6 +1,7 @@
 import React from 'react';
-import { Form, Input, Button, Select, Row, Col } from 'antd';
-import './App.less';
+import { Form, Input, Button, Select, Checkbox, Row, Col } from 'antd';
+import { PhoneFilled, EnvironmentOutlined } from '@ant-design/icons';
+import './formList.less';
 
 const { Option } = Select;
 const layout = {
@@ -21,10 +22,10 @@ const FormList = () => {
 
   return (
     <div className="wrapper-formList">
-      <h1 className="title" id={2}>
+      <h1 className="title" id="reservation">
         預約賞屋
       </h1>
-      <Row>
+      <Row gutter={30}>
         <Col sm={12} xs={24}>
           <iframe
             title="map"
@@ -47,39 +48,56 @@ const FormList = () => {
             name="control-hooks"
             onFinish={onFinish}>
             <Form.Item
-              name="姓名"
-              label="姓名"
+              name="name"
               rules={[
                 {
-                  required: true
+                  required: true,
+                  message: '必填'
                 }
               ]}>
-              <Input />
+              <Input placeholder="姓名" size="large" />
             </Form.Item>
             <Form.Item
-              name="電話"
-              label="電話"
+              name="phone"
               rules={[
                 {
-                  required: true
+                  required: true,
+                  message: '必填'
                 }
               ]}>
-              <Input />
+              <Input placeholder="聯絡電話" size="large" />
             </Form.Item>
             <Form.Item
-              name="時間"
-              label="時間"
+              name="Date"
               rules={[
                 {
-                  required: true
+                  required: true,
+                  message: '必填'
                 }
               ]}>
-              <Select allowClear>
-                <Option value="全日">全日</Option>
-                <Option value="上午">上午</Option>
-                <Option value="中午">中午</Option>
-                <Option value="晚上">晚上</Option>
+              <Select defaultValue="上午" size="large">
+                {['上午', '中午', '晚上', '全日'].map(text => (
+                  <Option key={text} value={text}>
+                    {text}
+                  </Option>
+                ))}
               </Select>
+            </Form.Item>
+            <Form.Item
+              name="agree"
+              valuePropName="checked"
+              rules={[
+                {
+                  required: true,
+                  message: '必勾'
+                }
+              ]}>
+              <Checkbox>
+                我同意
+                <a href="#type0img1" class="portfolio-link" data-toggle="modal">
+                  【隱私權政策】
+                </a>
+              </Checkbox>
             </Form.Item>
           </Form>
         </Col>
@@ -90,6 +108,18 @@ const FormList = () => {
             立即預約
           </Button>
         </Form.Item>
+      </div>
+
+      <div className="icon">
+        <a href="tel:0226010909" className="phone">
+          <PhoneFilled />
+        </a>
+        <a
+          href="http://goo.gl/maps/XqGY5QSrwhR1niMf6"
+          className="map"
+          target="blank">
+          <EnvironmentOutlined />
+        </a>
       </div>
     </div>
   );
