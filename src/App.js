@@ -402,7 +402,7 @@ const App = () => {
             }) => (
               <div key={id}>
                 <Row>
-                  <Col sm={16} xs={24} className="left">
+                  <Col lg={16} xs={24} className="left">
                     {leftImages.map(image => (
                       <img
                         key={image}
@@ -416,7 +416,7 @@ const App = () => {
                       />
                     ))}
                   </Col>
-                  <Col sm={8} xs={24} className="right">
+                  <Col lg={8} xs={24} className="right">
                     <div className="right-absolute">
                       {rightImages.map(image =>
                         rightImages.length === 2 ? (

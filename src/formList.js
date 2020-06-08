@@ -15,14 +15,14 @@ const FormList = () => {
       </h1>
       <Form form={form} name="control-hooks">
         <Row gutter={30}>
-          <Col sm={12} xs={24}>
+          <Col lg={12} xs={24}>
             <iframe
               title="map"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.548688654004!2d121.37482481478986!3d25.083281342468535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a6c282015199%3A0x9ae6d1cab8465f7f!2zMjQ05paw5YyX5biC5p6X5Y-j5Y2A5paH5YyW5LiJ6Lev5LqM5q61Mjk46Jmf!5e0!3m2!1szh-TW!2stw!4v1584327810050!5m2!1szh-TW!2stw"
               allowFullScreen
             />
           </Col>
-          <Col sm={12} xs={24}>
+          <Col lg={12} xs={24}>
             <Form.Item
               rules={[
                 {
@@ -69,7 +69,7 @@ const FormList = () => {
               </Checkbox>
             </Form.Item>
           </Col>
-          <Col sm={24} xs={24}>
+          <Col lg={24} xs={24}>
             <div className="form-submit">
               <Form.Item>
                 <Button type="primary" htmlType="submit">
