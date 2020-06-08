@@ -1,10 +1,20 @@
 .wrapper-formList {
-  margin: 0px 24px 0px 24px;
+  margin: 0px 40px 0px 40px;
   padding: 0px 20px 0px 20px;
   background-color: white;
 
   @media screen and (max-width: 640px) {
     margin: 0px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+
+    @media (max-width: 640px) {
+      padding: 0px 0px 20px;
+    }
   }
 
   .title {
@@ -52,16 +62,18 @@
 .icon {
   display: flex;
   justify-content: center;
-  font-size: 40px;
+  padding-top: 10px;
+  padding-bottom: 50px;
 
-  padding-bottom: 30px;
-
-  .phone {
-    padding-right: 5px;
-  }
-
-  .map {
-    padding-left: 5px;
+  .anticon {
+    margin: 0px 10px 0px 10px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    color: #ffffff;
+    background: #222222;
+    border-radius: 50%;
+    transform: scaleX(-1);
   }
 
   :hover {
@@ -70,7 +82,7 @@
 }
 
 .footer {
-  margin: 0px 24px 0px 24px;
+  margin: 0px 40px 0px 40px;
   background-color: #1f8393;
   text-align: center;
   color: white;
