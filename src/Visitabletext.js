@@ -33,7 +33,7 @@ const Visitabletext = props => {
           <span
             key={element.id}
             className="right-subTitle"
-            style={{ transitionDelay: '.5s' }}>
+            style={{ transitionDelay: '.25s' }}>
             {element.text}
             <br />
           </span>
@@ -45,7 +45,7 @@ const Visitabletext = props => {
             <span
               key={element.id}
               className="right-article"
-              style={{ transitionDelay: '1s' }}>
+              style={{ transitionDelay: '.5s' }}>
               {element.text.map(e => (
                 <span key={e.id} className="right-article-color">
                   {e.txt}
@@ -57,7 +57,7 @@ const Visitabletext = props => {
             <span
               key={element.id}
               className="right-article"
-              style={{ transitionDelay: '1s' }}>
+              style={{ transitionDelay: '.5s' }}>
               {element.text}
               <br />
             </span>
