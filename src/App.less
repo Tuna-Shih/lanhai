@@ -83,90 +83,10 @@
             height: 50%;
           }
         }
-
-        .text-none {
-          opacity: 0%;
-          position: relative;
-          margin: 0px 10px 0px 10px;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-        }
-
-        .text {
-          position: relative;
-          margin: 0px 10px 0px 10px;
-          padding: 20px;
-          height: 100%;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-
-          .right-title {
-            -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 2s; /* Firefox < 16 */
-            -ms-animation: fadein 2s; /* Internet Explorer */
-            -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
-
-            position: relative;
-            color: #1a2f63;
-            font-size: 2.4em;
-            font-weight: bolder;
-            letter-spacing: 3px;
-            border-bottom: 2px solid;
-            padding-bottom: 5px;
-          }
-
-          .square {
-            -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 1s; /* Firefox < 16 */
-            -ms-animation: fadein 1s; /* Internet Explorer */
-            -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
-
-            position: relative;
-            color: #1a2f63;
-            font-size: 2.5em;
-          }
-
-          .right-subTitle {
-            -webkit-animation: fadein 2.5s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 2.5s; /* Firefox < 16 */
-            -ms-animation: fadein 2.5s; /* Internet Explorer */
-            -o-animation: fadein 2.5s; /* Opera < 12.1 */
-            animation: fadein 2.5s;
-
-            position: relative;
-            color: #67bfbf;
-            font-size: 2em;
-            font-weight: bold;
-            letter-spacing: 2px;
-          }
-
-          .right-article {
-            -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-            -moz-animation: fadein 3s; /* Firefox < 16 */
-            -ms-animation: fadein 3s; /* Internet Explorer */
-            -o-animation: fadein 3s; /* Opera < 12.1 */
-            animation: fadein 3s;
-
-            position: relative;
-            color: black;
-            font-size: 1.5em;
-
-            .right-article-color:first-child {
-              color: #67bfbf;
-              font-weight: bold;
-            }
-          }
-        }
       }
 
       :nth-child(2) {
-        :nth-child(4) {
+        :nth-child(5) {
           :nth-child(2) {
             .right-article-color:first-child {
               color: #1a2f63;
@@ -177,7 +97,7 @@
       }
 
       :nth-child(9) {
-        :nth-child(4) {
+        :nth-child(5) {
           :nth-child(odd) {
             font-weight: bold;
             font-size: 1.8em;
@@ -186,7 +106,7 @@
       }
 
       :nth-child(10) {
-        :nth-child(4) {
+        :nth-child(5) {
           :nth-child(n + 3) {
             font-weight: bold;
             font-size: 1.8em;
@@ -195,7 +115,7 @@
       }
 
       :nth-child(11) {
-        :nth-child(4) {
+        :nth-child(5) {
           :nth-child(n + 4) {
             font-weight: bold;
             font-size: 1.8em;
@@ -203,64 +123,5 @@
         }
       }
     }
-  }
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    top: 30%;
-  }
-  to {
-    opacity: 1;
-    top: 0%;
-  }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-  from {
-    opacity: 0;
-    top: 30%;
-  }
-  to {
-    opacity: 1;
-    top: 0%;
-  }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-  from {
-    opacity: 0;
-    top: 30%;
-  }
-  to {
-    opacity: 1;
-    top: 0%;
-  }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-  from {
-    opacity: 0;
-    top: 30%;
-  }
-  to {
-    opacity: 1;
-    top: 0%;
-  }
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-  from {
-    opacity: 0;
-    top: 30%;
-  }
-  to {
-    opacity: 1;
-    top: 0%;
   }
 }

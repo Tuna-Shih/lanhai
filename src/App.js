@@ -4,7 +4,7 @@ import 'antd/dist/antd.css';
 import './App.less';
 import FormList from './formList.js';
 import { v4 as uuidv4 } from 'uuid';
-import VisibilitySensor from 'react-visibility-sensor';
+import Visitabletext from './Visitabletext.js';
 
 const { Header, Content, Footer } = Layout;
 const { Link } = Anchor;
@@ -436,61 +436,12 @@ const App = () => {
                         )
                       )}
                     </div>
-                    <VisibilitySensor partialVisibility={true}>
-                      {({ isVisible }) => (
-                        <div className={isVisible ? 'text' : 'text-none'}>
-                          <p>
-                            {title.map(element => (
-                              <span key={element.id} className="right-title">
-                                {element.text}
-                                <br />
-                              </span>
-                            ))}
-                          </p>
-                          <p>
-                            {square.map(element => (
-                              <span key={element.id} className="square">
-                                {element.text}
-                                <br />
-                              </span>
-                            ))}
-                          </p>
-                          <p>
-                            {subTitle.map(element => (
-                              <span key={element.id} className="right-subTitle">
-                                {element.text}
-                                <br />
-                              </span>
-                            ))}
-                          </p>
-                          <p>
-                            {article.map(element =>
-                              element.text instanceof Array ? (
-                                <span
-                                  key={element.id}
-                                  className="right-article">
-                                  {element.text.map(e => (
-                                    <span
-                                      key={e.id}
-                                      className="right-article-color">
-                                      {e.txt}
-                                    </span>
-                                  ))}
-                                  <br />
-                                </span>
-                              ) : (
-                                <span
-                                  key={element.id}
-                                  className="right-article">
-                                  {element.text}
-                                  <br />
-                                </span>
-                              )
-                            )}
-                          </p>
-                        </div>
-                      )}
-                    </VisibilitySensor>
+                    <Visitabletext
+                      title={title}
+                      square={square}
+                      subTitle={subTitle}
+                      article={article}
+                    />
                   </Col>
                 </Row>
               </div>
