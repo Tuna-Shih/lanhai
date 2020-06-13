@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './App.less';
 
 class Todo extends React.Component {
   state = {
@@ -39,10 +40,10 @@ class Todo extends React.Component {
     const { isEdit, editText } = this.state;
 
     return (
-      <div className="list-item">
-        <div className="list-item__content">{todo.text}</div>
+      <div className={styles.item}>
+        <div className={styles.item__content}>{todo.text}</div>
         <div>
-          <div className="list-item__state">
+          <div className={styles.item__state}>
             <button className="delete" onClick={this.delete}>
               Delete
             </button>
@@ -50,7 +51,7 @@ class Todo extends React.Component {
               {isEdit ? 'Editing' : 'Edit'}
             </button>
           </div>
-          <div className="edit-input">
+          <div className={styles.edit__input}>
             {isEdit ? (
               <div>
                 <input
