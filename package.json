@@ -1,8 +1,14 @@
 {
+  "name": "to-do-list",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://Tuna-Shih.github.io/todo",
   "scripts": {
     "dev": "next -p 8080",
     "prod": "next build",
-    "start": "next start -p 8080"
+    "start": "next start -p 8080",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.1",
