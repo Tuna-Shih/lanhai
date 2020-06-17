@@ -5,10 +5,8 @@
   "homepage": "https://Tuna-Shih.github.io/todo",
   "scripts": {
     "dev": "next -p 8080",
-    "prod": "next build",
-    "start": "next start -p 8080",
-    "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "build": "next build",
+    "start": "next start -p 8080"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.1",
@@ -29,6 +27,7 @@
     "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "string-width": "^4.2.0",
     "uuid": "^8.1.0",
     "webpack": "^4.43.0"
   }
