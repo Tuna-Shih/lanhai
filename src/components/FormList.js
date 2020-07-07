@@ -1,20 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import styles from './styles/FormList.less';
+import React from 'react';
 import { Form, Input, Button } from 'antd';
-import cookies from 'js-cookie';
 import isEmail from 'validator/lib/isEmail';
 import isMobilePhone from 'validator/lib/isMobilePhone';
+import useOnFinish from './hooks/useOnFinish';
+import styles from './styles/FormList.less';
 
 const FormList = () => {
   const [form] = Form.useForm();
-
-  const onFinish = inputData => {
-    const getData = cookies.get('userData');
-    const oldData = getData ? JSON.parse(getData) : [];
-
-    const dataList = [inputData, ...oldData];
-    cookies.set('userData', JSON.stringify(dataList));
-  };
+  const onFinish = useOnFinish();
 
   return (
     <div className={styles.wrapper}>
@@ -95,4 +88,4 @@ const FormList = () => {
   );
 };
 
-export default FormList;
+export default React.memo(FormList);
