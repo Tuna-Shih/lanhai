@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://Tuna-Shih.github.io/todo",
   "scripts": {
-    "dev": "next -p 8080",
+    "dev": "next -p $PORT",
     "build": "next build",
-    "start": "next start -p 8080",
+    "start": "next start -p $PORT",
     "lint": "eslint src/components/*.js",
     "postinstall": "patch-package"
   },
