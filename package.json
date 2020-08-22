@@ -2,7 +2,6 @@
   "name": "to-do-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Tuna-Shih.github.io/todo",
   "scripts": {
     "dev": "next -p $PORT",
     "build": "next build",
