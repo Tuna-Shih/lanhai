@@ -12,7 +12,6 @@ const ImageAndText = ({
   article
 }) => {
   const [visible, setVisible] = useState(false);
-  const paragraph = convertRawToHTML(article);
 
   return (
     <Row>
@@ -54,7 +53,11 @@ const ImageAndText = ({
             ))}
           </div>
 
-          <div className={styles.article}>{paragraph}</div>
+          <div
+            className={styles.article}
+            dangerouslySetInnerHTML={{
+              __html: convertRawToHTML(article)
+            }}></div>
         </div>
       </Col>
     </Row>
