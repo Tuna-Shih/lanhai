@@ -1,0 +1,71 @@
+.rightAbsolute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 50px 20px 50px 20px;
+
+  .visibilitySensor {
+    margin: -1px 0px 0px;
+    width: 100%;
+    height: 1px;
+  }
+
+  .title {
+    color: #1a2f63;
+    font-weight: bolder;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 2.4em;
+    padding-bottom: 2%;
+
+    :nth-last-child(2) {
+      border-bottom: 2px solid;
+    }
+    :last-child {
+      padding-top: 4%;
+    }
+  }
+
+  .subTitle {
+    color: #67bfbf;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 2em;
+    padding-bottom: 2%;
+  }
+
+  .article {
+    color: black;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .title,
+  .subTitle,
+  .article {
+    display: block;
+    transition: all 2s ease;
+    opacity: 0.25;
+    transform: translateY(50px);
+  }
+
+  &.visible {
+    .title,
+    .subTitle,
+    .article {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}

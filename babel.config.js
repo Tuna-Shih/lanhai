@@ -8,12 +8,6 @@ module.exports = {
         style: true
       },
       'antd'
-    ],
-    [
-      '@babel/plugin-proposal-class-properties',
-      {
-        loose: true
-      }
     ]
   ]
 };

@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks'],
   rules: {
+    'react/prop-types': 'off',
     indent: ['error', 2],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],

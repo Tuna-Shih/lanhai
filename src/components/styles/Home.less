@@ -1,0 +1,87 @@
+@import '~antd/lib/style/themes/default.less';
+
+.root {
+  background-color: #000000;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 0px;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1;
+
+  & > div {
+    height: 100%;
+
+    & > div {
+      height: 100%;
+    }
+  }
+
+  :global(.ant-anchor-wrapper) {
+    width: 90%;
+    height: 100%;
+    margin: 0px auto;
+    padding: 0px;
+    background: transparent;
+
+    @media (max-width: @screen-sm-max) {
+      width: 100%;
+    }
+  }
+
+  :global(.ant-anchor-ink) {
+    display: none;
+  }
+
+  :global(.ant-anchor) {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+
+  :global(.ant-anchor-link) {
+    display: flex;
+    align-items: center;
+    padding: 0px 30px;
+    height: 100%;
+  }
+
+  :global(.ant-anchor-link-title) {
+    color: white;
+  }
+}
+
+.content {
+  margin-top: 64px;
+  padding: 0px 40px 0px 40px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.footer {
+  margin: 0px 40px 0px 40px;
+  background-color: #1f8393;
+  text-align: center;
+  color: white;
+
+  @media screen and (max-width: 992px) {
+    margin: 0px;
+  }
+
+  .Url {
+    color: #333;
+    &:hover {
+      color: red;
+    }
+  }
+}
